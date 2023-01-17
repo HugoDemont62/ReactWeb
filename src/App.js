@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Quote from "./Quote.js";
 
 function App() {
-  return (
+  //State (état, données)
+    const quotes = [
+        {id:1,text:"Elementary , my dear Watson ",author:"Sherlock Holmes"},
+        {id:2,text:"I think therefore I am",author:"Rene Descartes"},
+        {id:3,text:"Big Brother is watching you ",author:"George Orwell"},
+        {id:4,text:"You talkin ’ to me?",author:"Travis Bickle"}
+    ];
+  //Comportements
+  //Render : affichage
+  return(<>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <h1>Citations</h1>
+        <div className ="App">
+            { quotes.map (c=><Quote text ={c.text } author ={c.author }/>)};
+            </div>
+    </div >
+  </>)
 }
 
 export default App;
